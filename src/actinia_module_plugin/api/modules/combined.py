@@ -93,8 +93,7 @@ class DescribeVirtualModule(ResourceBase):
                 virtual_module = createGrassModule(self, module)
             except Exception:
                 virtual_module = createActiniaModule(self, module, returns)
-            finally:
-                return make_response(jsonify(virtual_module), 200)
+            return make_response(jsonify(virtual_module), 200)
 
         except Exception:
             msg = 'Error looking for module "' + module + '".'
